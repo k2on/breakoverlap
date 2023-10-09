@@ -5,28 +5,16 @@ function collegeHasBreak(college: College, date: Date): boolean {
     return college.breaks.some(b => b.start.getTime() <= time && time <= b.end.getTime());
 }
 
-export function getOverlaps(colleges: College[]): Overlap[] {
+export function getOverlaps(colleges: College[]): Date[] {
     const start = new Date();
     start.setHours(0, 0, 0);
-    const breaks: Overlap[] = [];
+    const breaks: Date[] = [];
 
-    let startDate: Date | null = null;
-    for (let i = 0; i < 20; i++) {
+    for (let i = 0; i < 365; i++) {
         const date = new Date(start.getTime() + (1000 * 60 * 60 * 24 * i));
-        const dateLast = new Date(start.getTime() + (1000 * 60 * 60 * 24 * (i - 1)));
-        const hasBreak = colleges.every(college => collegeHasBreak(college, date))
-
-        // no more overlap
-        if (!hasBreak && startDate != null) {
-            breaks.push({
-                start: startDate,
-                end: date,
-            })
-            startDate = null;
-        // starts overlap
-        } else if (hasBreak && startDate == null) {
-            startDate = date;
-        }
+        const isWeekend = date.getDay() == 0 || date.getDay() == 6;
+        const hasBreak = colleges.every(college => collegeHasBreak(college, date)) || isWeekend;
+        if (hasBreak) breaks.push(date);
     }
 
     return breaks;

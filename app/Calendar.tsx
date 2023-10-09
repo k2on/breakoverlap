@@ -17,5 +17,5 @@ export default function CalendarDisplay({ selected }: CalendarProps) {
           selected={overlaps}
           className="rounded-md border"
         />
-    {JSON.stringify(overlaps)}</div>
+    </div>
 }

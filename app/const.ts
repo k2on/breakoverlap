@@ -7,8 +7,28 @@ export const COLLAGES: College[] = [
         breaks: [
             {
                 name: "Fall break",
-                start: new Date(2023, 9, 14),
+                start: new Date(2023, 9, 16),
                 end: new Date(2023, 9, 17),
+            },
+            {
+                name: "Thanksgiving break",
+                start: new Date(2023, 10, 22),
+                end: new Date(2023, 10, 24),
+            },
+            {
+                name: "Christmas break",
+                start: new Date(2023, 11, 16),
+                end: new Date(2024, 0, 10),
+            },
+            {
+                name: "Spring break",
+                start: new Date(2024, 2, 18),
+                end: new Date(2024, 2, 22),
+            },
+            {
+                name: "Summer break",
+                start: new Date(2024, 4, 3),
+                end: new Date(2024, 7, 18),
             }
         ],
     },
