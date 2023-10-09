@@ -2,7 +2,7 @@ import { College, Overlap } from "./types";
 
 function collegeHasBreak(college: College, date: Date): boolean {
     const time = date.getTime();
-    return college.breaks.some(b => b.start.getTime() <= time && time <= b.end.getTime());
+    return college.breaks.some(b => b.start.getTime() <= time && time <= b.end.getTime() + 1000 * 60 * 60 * 24);
 }
 
 export function getOverlaps(colleges: College[]): Date[] {

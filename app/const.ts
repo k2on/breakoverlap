@@ -40,20 +40,26 @@ export const COLLAGES: College[] = [
                 name: "Fall break",
                 start: new Date(2023, 9, 7),
                 end: new Date(2023, 9, 15),
-            }
-        ],
-    },
-    {
-        value: "u miami",
-        label: "U Miami",
-        breaks: [
+            },
             {
-                name: "Fall break",
-                start: new Date(2023, 9, 15),
-                end: new Date(2023, 9, 20),
-            }
+                name: "Thanksgiving break",
+                start: new Date(2023, 10, 22),
+                end: new Date(2023, 10, 26),
+            },
+
         ],
     },
+    // {
+    //     value: "u miami",
+    //     label: "U Miami",
+    //     breaks: [
+    //         {
+    //             name: "Fall break",
+    //             start: new Date(2023, 9, 15),
+    //             end: new Date(2023, 9, 20),
+    //         }
+    //     ],
+    // },
 ];
 
 
